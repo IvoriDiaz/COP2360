@@ -1,0 +1,36 @@
+﻿// File: OctopusExample.cs
+using System;
+
+namespace Module3Examples
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            // Creating an instance of the Octopus class
+            var octopus = new Octopus("Jack");
+            Console.WriteLine($"Octopus Name: {octopus.Name}");
+            Console.WriteLine($"Octopus Age: {octopus.Age}");
+            Console.WriteLine($"Octopus Legs: {octopus.Legs}");
+
+            // Using the expression-bodied method
+            Console.WriteLine($"Octopus age in months: {octopus.GetAgeInMonths()}");
+        }
+    }
+
+    public class Octopus
+    {
+        public readonly string Name;
+        public int Age { get; set; }
+        public readonly int Legs = 8;
+
+        public Octopus(string name)
+        {
+            Name = name;
+            Age = 10; // Setting a default age
+        }
+
+        // An example of an expression-bodied method
+        public int GetAgeInMonths() => Age * 12;
+    }
+}
